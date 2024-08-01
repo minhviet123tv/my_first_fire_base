@@ -1,0 +1,25 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+dependencies {
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2")) // Thêm dòng 3 từ Firebase
+    implementation("com.google.firebase:firebase-analytics") // Thêm dòng 4 từ Firebase
+}
+
+
