@@ -42,7 +42,7 @@ android {
         applicationId = "com.example.my_first_fire_base" // Sẽ copy tên cho tên app trên firebase
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdk = 23 // Phải chỉnh min là 19 -> không để mặc định khi mới tạo project
+        minSdkVersion = flutter.minSdkVersion // Phải chỉnh min là 19 -> không để mặc định khi mới tạo project
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
